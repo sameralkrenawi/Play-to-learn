@@ -1,4 +1,3 @@
-
 <?php
 $dbServername = "localhost"; //Connect to server
 $dbUsername = "u815710449_playtolearn"; // Username Database
