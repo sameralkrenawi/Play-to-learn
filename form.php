@@ -36,8 +36,6 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "INSERT INTO MyGuests (username,email,sex,password,pays,age,Adress_IP)
-VALUES ('$name','$email','$sex','$password','$contry','$age','$ip')";
 $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 $country_ip = $details->country; //Collect Country from Adress IP
 $sql = "INSERT INTO MyGuests (username,email,sex,password,pays,age,Adress_IP,Country_IP)
