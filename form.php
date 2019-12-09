@@ -31,6 +31,7 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 } else {
     $ip = $_SERVER['REMOTE_ADDR'];
 }
+}//Collect Adress IP 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
