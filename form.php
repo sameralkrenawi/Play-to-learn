@@ -22,7 +22,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-$country_ip = $details->country; //Collect Country from Adress ip
+$country_ip = $details->country; //Collect Country from Adress IP
 $sql = "INSERT INTO MyGuests (username,email,sex,password,pays,age,Adress_IP,Country_IP)
 VALUES ('$name','$email','$sex','$password','$country','$age','$ip','$country_ip')";//Add Value to Databse
 $conn->query($sql);
