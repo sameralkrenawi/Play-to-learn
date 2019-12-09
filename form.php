@@ -13,6 +13,7 @@ $age = $_GET["age"];
 $contry = $_GET["pays"];
 $password = password_hash($_GET["password"],PASSWORD_DEFAULT);
 
+$dbServername = "localhost"; //Connect to server
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
 } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
