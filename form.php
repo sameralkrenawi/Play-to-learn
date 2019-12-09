@@ -14,6 +14,16 @@ $contry = $_GET["pays"];
 $password = password_hash($_GET["password"],PASSWORD_DEFAULT);
 
 $dbServername = "localhost"; //Connect to server
+$dbUsername = "u815710449_playtolearn"; // Username Database
+$dbPassword = "Sce2019"; // Password Database
+$dbName="u815710449_playtolearn"; // Name of table
+$conn = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName); // Connect to Databse
+$name = $_POST["username"]; // Collect username
+$sex = $_POST["sexe"]; // Collect Sex
+$email = $_POST["email"]; // Collect email
+$age = $_POST["age"]; // Collect age
+$country = $_POST["country"];// Collect Country
+$password=password_hash($_POST["password"],PASSWORD_DEFAULT); // Collect and Crypted password
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ip = $_SERVER['HTTP_CLIENT_IP'];
 } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
