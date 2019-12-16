@@ -1,4 +1,4 @@
-?php 
+<?php 
 session_start();
 $dbServername = "localhost";
 $dbUsername = "u815710449_playtolearn";
@@ -20,7 +20,7 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
         echo 'Vous êtes connecté !';
         echo $repons['username'];
         $temp=1;
-        header('Location:/Sign-up.html');
+        header('Location:/home.php');
         exit();
     }
 }
