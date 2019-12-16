@@ -59,11 +59,12 @@ button {
 	padding: 16px;
   }
   
-  span.psw {
+  a:hover,span.psw {
 	color:#4CAF50;
 	float: right;
 	padding-top: 16px;
   }
+
   
   /* Change styles for span and cancel button on extra small screens */
   @media screen and (max-width: 300px) {
