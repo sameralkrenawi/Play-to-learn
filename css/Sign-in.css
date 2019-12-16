@@ -1,4 +1,5 @@
 
+
 input[type=text], input[type=password] {
 	width: 100%;
 	padding: 12px 20px;
@@ -50,8 +51,8 @@ button {
 	margin: 24px 0 12px 0;
   }
   
-  img.avatar {
-	width: 40%;
+    .avatar{
+	width:60%;
 	border-radius: 50%;
   }
   
