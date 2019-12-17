@@ -1,33 +1,10 @@
-.tabcenter{
-    margin-left:auto;
-    margin-right:auto;
-    border-spacing: 5px;
-}
-
-/*table{
-    border-collapse: collapse;
-    width: 400px;
-  }
-  th, td{
-    border: 1px solid black;
-    padding: 10px;
-    vertical-align: top;
+body  {
+  background-image: url("http://clipart-library.com/images/kTMa5GxTj.jpg");*
   }
 
-th,td{
-    border:1px solid black;
-    padding: 10px;
+table, th{
+  border: 1px solid black;
+  margin-left:auto;
+  margin-right:auto;
+  height:4000px;
 }
-  */
- table{
-    caption-side: bottom;
-}
- th, td{
-    border: 1px solid black;
-    padding: 10px;
-  }
-  caption{
-    background-color: #0AD;
-    font-weight: bold;
-  }
-
