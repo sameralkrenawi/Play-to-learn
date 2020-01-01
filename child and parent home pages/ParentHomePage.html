@@ -1,0 +1,101 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world</title>
+    <style>
+        h1 {
+            color: aquamarine;
+            font-size: 100px;
+            font-style: oblique;
+        }
+
+        h2 {
+            color: cadetblue;
+            font-size: 70px;
+        }
+
+        h3 {
+            color: cadetblue;
+            font-size: 70px;
+        }
+
+        h4 {
+            color: cadetblue;
+            font-size: 70px;
+        }
+        h5{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Parent Page</h1>
+    </center>
+
+    <!-- Navigation -->
+    <center>
+        <nav class="p1-bar p1-black">
+            <a href="#home" class="p1-button p1-bar-item">Home</a>
+            <a href="#lessons" class="p1-button p1-bar-item">Lessons</a>
+            <a href="#ecercises" class="p1-button p1-bar-item">Exercises</a>
+            <a href="#exams" class="p1-button p1-bar-item">Exams</a>
+        </nav>
+    </center>
+
+    <!--article-->
+    <center>
+        <article> welcome to your "play to learan" page, you can get all lessons,excercises, exams even your grades </article>
+    </center>
+
+    <!--headers-->
+    <center>
+        <div style="clear: both">
+            <h2 style="float: left">Lessons</h2>
+            <h3 style="float: right">Exercises</h3>
+        </div>
+        <hr />
+        <h4>Exams</h4>
+
+    </center>
+
+
+
+
+
+    <!-- Slide Show -->
+    <censter>
+        <section>
+            <img class="ChildSlides" src="child1.jpg" style="width:100%">
+            <img class="ChildSlides" src="child2.jpg" style="width:100%">
+        </section>
+    </censter>
+
+    <script>
+        // Automatic Slideshow - change image every 3 seconds
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("ChildSlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
+        }
+    </script>
+
+
+</body>
+</html>
+
