@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>     
+        <script>
+            function checkPassword(form) { 
+                password = form.password.value;
+                password2 = form.password2.value;
+  
+                // If password not entered 
+                if (password == '') 
+                    alert ("Please enter Password"); 
+                      
+                // If confirm password not entered 
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                // If Not same return False.     
+                else if (password != password2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
+            }          
+        </script>
     	<title> Welcome to play to read !</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/Sign-up.css">
@@ -8,6 +29,7 @@
 
 	<body> 
     <div class='Sign-up-form'>
+    <form onSubmit = "return checkPassword(this)"> 
     <h1> Sign up</h1>
 		<form method="post" action="form.php">
 			<div class="container">
@@ -20,7 +42,7 @@
             
             
                 <label for="password-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat 4 digits" name="password-repeat" required>
+                <input type="password" placeholder="Repeat 4 digits" name="password2" required>
 			
 				<label for="email"><b>Email</b> </label>
                 <input type="email" placeholder="Enter Email" name="email" required>
