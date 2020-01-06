@@ -12,6 +12,7 @@
 	box-sizing: border-box;
 }
 
+  
 .Sign-up-form {
 	width: 500px;
 	margin: 30px auto;
@@ -26,13 +27,11 @@
 	margin: 0 0 15px;
 }
 
-
 /* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
   background-color: #ddd;
   outline: none;
 }
-
 
 /* Set a style for all buttons */
 button {
