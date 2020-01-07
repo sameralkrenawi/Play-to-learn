@@ -3,36 +3,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Partie V - Chapitre 5 - Exemple 6</title>
-    <style>
-      div {margin: 50px auto;text-align: center; margin-right: 1000px;}
-      #draggable { padding: 5px;width: 150px;background-color: #CCC;}
-      #draggable1 {padding: 5px;width: 150px;background-color: #CCC;}
-      #draggable2 {padding: 5px;width: 150px;background-color: #CCC;}
-      #draggable3 {padding: 5px;width: 150px;background-color: #CCC;}
-      #dropper {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:400px;margin-top:-255px;}
-      .button {
-         background-color: #1c87c9;
-         border: none;
-         color: white;
-         padding: 20px 34px;
-         text-align: center;
-         text-decoration: none;
-         display: inline-block;
-         font-size: 20px;
-         margin: 4px 2px;
-         cursor: pointer;
-         margin-left: 1000px;
-         margin-top: 50px;
-         }
-
-
-    </style>
+    <title>Partie 2 - Exercice - Question4</title>
+    <link rel="stylesheet" href="css/Exercice-1.css">
   </head>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
    
   <body>
+
+    <audio id="myAudio">
+      <source src="audio/dogs-dont-like-cats1578408325.mp3" type="audio/mp3">
+    </audio>
 
     <div id="draggable1" draggable="true"><font color="#42B00B"><font size="5"><mark>Frogs</mark></FONT></font></div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </mark></FONT></font></div>
     <div id="draggable2" draggable="true"> <font color="#42B00B"><font size="5"><mark>Pots</mark></FONT></font></div>
@@ -76,3 +57,14 @@
   
   
 </html>
+<div class="container">
+  <button onclick="playAudio()" class="btn">Play Audio</button>
+</div>
+<script>
+  var x = document.getElementById("myAudio"); 
+  function playAudio() { x.play(); } 
+</script>
+
+</body>
+</html>
+  
