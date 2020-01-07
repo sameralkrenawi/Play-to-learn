@@ -1,10 +1,20 @@
-body  {
-  background-image: url("http://clipart-library.com/images/kTMa5GxTj.jpg");*
-  }
-
-table, th{
-  border: 1px solid black;
-  margin-left:auto;
-  margin-right:auto;
-  height:4000px;
-}
+div {margin: 50px auto;text-align: center; margin-right: 1000px;}
+      #draggable { padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable1 {padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable2 {padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable3 {padding: 5px;width: 150px;background-color: #CCC;}
+      #dropper {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:400px;margin-top:-255px;}
+      .button {
+         background-color: #1c87c9;
+         border: none;
+         color: white;
+         padding: 20px 34px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 20px;
+         margin: 4px 2px;
+         cursor: pointer;
+         margin-left: 1000px;
+         margin-top: 50px;
+         }
