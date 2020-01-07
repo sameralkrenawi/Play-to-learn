@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie V - Chapitre 5 - Exemple 6</title>
+    <style>
+      div {margin: 50px auto;text-align: center; margin-right: 1000px;}
+      #draggable { padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable1 {padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable2 {padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable3 {padding: 5px;width: 150px;background-color: #CCC;}
+      #dropper {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:400px;margin-top:-255px;}
+      .button {
+         background-color: #1c87c9;
+         border: none;
+         color: white;
+         padding: 20px 34px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 20px;
+         margin: 4px 2px;
+         cursor: pointer;
+         margin-left: 1000px;
+         margin-top: 50px;
+         }
+
+
+    </style>
+  </head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+  <body>
+
+    <div id="draggable2" draggable="true"><font color="#42B00B"><font size="5"><mark>Keep</mark></FONT></font></div>
+    <div id="draggable" draggable="true"> <font color="#42B00B"><font size="5"><mark>Eat</mark></FONT></font></div>
+    <div id="draggable1"  draggable="true"> <font color="#42B00B"><font size="5"><mark>Tricj</mark></FONT></font></div>
+    <div id="draggable3" draggable="true"><font color="#42B00B"><font size="5"><mark>Bit</mark></FONT></font></div>
+
+
+    <div id="dropper">"i like ________ french fries"</div>
+
+    <a href="Exercice_2_.html" class="button">Next</a>
+
+
+
+
+<script>
+    var clickme = document.getElementById('draggable');
+    clickme.addEventListener('click', function(e) {
+        e.target.innerHTML = 'Good!';
+    });
+
+    var clickme = document.getElementById('draggable1');
+    clickme.addEventListener('click', function(e) {
+        e.target.innerHTML = 'NoGood!';
+    });
+
+    var clickme = document.getElementById('draggable2');
+    clickme.addEventListener('click', function(e) {
+        e.target.innerHTML = 'NoGood!';
+    });
+
+    var clickme = document.getElementById('draggable3');
+    clickme.addEventListener('click', function(e) {
+        e.target.innerHTML = 'NoGood!';
+    });
+</script>
+    
+    
+    
+  </body>
+  
+  
+  
+</html>
