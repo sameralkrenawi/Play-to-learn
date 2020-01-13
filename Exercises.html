@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hello world</title>
+
+    <style>
+        @import "compass/css3";
+
+body{
+   text-align:center;
+   padding:10%;
+   background: #1b1b1b;
+   font-family: 'Roboto', sans-serif;
+}
+.btn{
+   cursor:pointer;
+   display:inline-block;
+   padding:30px;
+   background: #94a657;
+   border-radius: 4px;
+   color: #fff;
+   text-transform:uppercase;
+   line-height:20px;
+   @include transition(box-shadow .25s ease);
+   &:after{
+      content:'';
+      display:inline-block;
+      color: #94a657;
+      background:#fff;
+      font-family: 'FontAwesome';
+      padding:3px;
+      border-radius: 50%;
+      height:20px;
+      width:20px;
+      margin-left:8px;
+      padding-left: 4.5px;
+      padding-right:1.5px;
+   }
+   &.playing{
+       &:after{
+         padding:3px;
+         content:'';
+      }
+   }
+}
+
+    </style>
+</head>
+
+
+<body>
+    <audio id="nyan" src="https://designshack.net/tutorialexamples/html5-audio-player/media/evidence-song.mp3" preload="metadata" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <a class="btn" id="nyan-btn"> A </a>
+
+
+
+
+    <script>
+        var nyan = document.getElementById('nyan');
+        var nyanBtn = document.getElementById('nyan-btn');
+
+        function playPause(song){
+            if (song.paused && song.currentTime >= 0 && !song.ended) {
+                song.play();
+            } else {
+            song.pause();
+            }
+        }
+
+        function reset(btn, song){
+        if(btn.classList.contains('playing')){
+            btn.classList.toggle('playing');
+        }
+        song.pause();
+        song.currentTime = 0;
+        }
+
+        function progress(btn, song){
+            setTimeout(function(){
+                var end = song.duration; 
+                var current = song.currentTime;
+                var percent = current/(end/100);
+                //check if song is at the end
+                if(current==end){
+                reset(btn, song);
+            }
+            //set inset box shadow
+            btn.style.boxShadow = "inset " + btn.offsetWidth * (percent/100) + "px 0px 0px 0px rgba(0,0,0,0.125)"
+            //call function again
+            progress(btn, song);     
+          }, 1000);
+        }
+
+        nyanBtn.addEventListener('click', function(){
+        nyanBtn.classList.toggle('playing');
+        playPause(nyan);
+        progress(nyanBtn, nyan);
+        });
+
+
+    </script>
+</body>
