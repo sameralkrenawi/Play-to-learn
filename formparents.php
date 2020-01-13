@@ -5,9 +5,7 @@ $dbPassword = "Sce2019"; // Password Database
 $dbName="u815710449_playtolearn"; // Name of table
 $conn = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName); // Connect to Databse
 $name = $_POST["username"]; // Collect username
-$sex = $_POST["sexe"]; // Collect Sex
 $email = $_POST["email"]; // Collect email
-$age = $_POST["age"]; // Collect age
 $country = $_POST["country"];// Collect Country
 $password=password_hash($_POST["password"],PASSWORD_DEFAULT); // Collect and Crypted password
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -23,8 +21,9 @@ if ($conn->connect_error) {
 }
 $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 $country_ip = $details->country; //Collect Country from Adress IP
-$sql = "INSERT INTO MyGuests (username,email,sex,password,pays,age,Adress_IP,Country_IP)
-VALUES ('$name','$email','$sex','$password','$country','$age','$ip','$country_ip')";//Add Value to Databse
+$sql = "INSERT INTO MyParents (username,password,email,pays,Adress_IP,Country_IP)
+VALUES ('$name','$password','$email','$country','$ip','$country_ip')";//Add Value to Databse
+
 $conn->query($sql);
 header('Location:/Sign-in.html');
 ?>

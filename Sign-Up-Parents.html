@@ -33,9 +33,9 @@
         margin-right: auto;">
 	</div> 
     <div class='Sign-up-form'>
-    <form method="post" action="form.php">   
+    <form method="post" action="formparents.php">   
         <form onSubmit = "return checkPassword(this)"> 
-
+		<form method="post" action="formparents.php">
 			<div class="container">
                 <h1 style="text-align: center;"> Sign up</h1>
 				<label for="username"><b>Username</b></label>
@@ -44,26 +44,11 @@
 			
 				<label for="pass"><b>Password</b></label>
   				<input type="password" placeholder="Enter 4 digits" name="password" required>
-            
-            
                 <label for="password-repeat"><b>Repeat Password</b></label>
                 <input type="password" placeholder="Repeat 4 digits" name="password2" required>
 			
 				<label for="email"><b>Email</b> </label>
-                <input type="email" placeholder="Enter Email" name="email" required>
-                  
-                <div class="champ">
-                    <label for="age"><b>Choose your age</b> : </label>
-                    <input type="number" id="age"  name="age">
-                </div>
-
-                <div class="champ">
-                    <label for="boy"><b>boy</b></label>
-                    <input type="radio" id="boy"  name="sexe" value="Boy">
-                    <label for="girl"><b>girl</b></label>
-                    <input type="radio" id="girl"  name="sexe" value="Girl">
-                </div>
-            
+                <input type="email" placeholder="Enter Email" name="email" required>          
                 <div class="champ">
                     <label for="country"><b>Country</b></label>
                     <select id="country" name="country">

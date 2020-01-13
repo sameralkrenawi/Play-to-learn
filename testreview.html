@@ -78,7 +78,7 @@ span.psw {
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 600px; 
-  height: 400px/* Could be more or less, depending on screen size */
+  height: 500px/* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -132,18 +132,28 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="review.php" method="post">
 
     <div class="container">
       <h1 style="text-align: center;"> Leave us a review</h1>
       
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="username" required>
 
       <label for="psw"><b>Review</b></label>
       
-      <textarea class="review" placeholder="Enter your review here..."  ></textarea>
-        
+      <textarea class="review" placeholder="Enter your review here..."  name="review"></textarea>
+      
+      <div class="champ">
+        <label for="note"><b>Note</b></label>
+        <select id="note" name="note">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>  
       <button type="submit">Send</button>
     </div>
 
