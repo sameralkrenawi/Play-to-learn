@@ -40,7 +40,7 @@ button {
 	opacity: 0.8;
   }
   
-  .cancelbtn  {
+  .cancelbtn {
 	width: auto;
 	padding: 10px 18px;
 	background-color: #f44336;
@@ -56,17 +56,15 @@ button {
 	border-radius: 50%;
   }
   
-	.container {
+  .container {
 	padding: 16px;
   }
   
-  	span.psw,a:hover {
+  span.psw ,a:hover {
 	color:#4CAF50;
 	float: right;
 	padding-top: 16px;
   }
-
-
   
   /* Change styles for span and cancel button on extra small screens */
   @media screen and (max-width: 300px) {
@@ -78,3 +76,5 @@ button {
 	   width: 100%;
 	}
   }
+
+  
