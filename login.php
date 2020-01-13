@@ -17,10 +17,9 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
     if($repons['username']==$username and (password_verify($password,$repons['password'])==1)){
         session_start();
         $_SESSION['username'] = $username;
-        echo 'Vous êtes connecté !';
-        echo $repons['username'];
+        $_SESSION['email'] = $repons['email'];
         $temp=1;
-        header('Location:/home1.php');
+        include('youraccountChild.php');
         exit();
     }
 }
@@ -34,13 +33,28 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
     if($repons['username']==$username and (password_verify($password,$repons['password'])==1)){
         session_start();
         $_SESSION['username'] = $username;
-        echo 'Vous êtes connecté !';
-        echo $repons['username'];
-        $temp=1;
-        header('Location:/home.php');
+        $_SESSION['email'] = $repons['email'];
+        include('ParentPage.php');
         exit();
     }
 }
+
+$username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
+$password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
+$requete = "SELECT * FROM Admin";
+$exec_requete = mysqli_query($db,$requete);
+$repons = mysqli_fetch_array($exec_requete);
+$temp=0;
+while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
+    echo $repons['username'];
+    if($repons['username']==$username){
+        session_start();
+        $_SESSION['username'] = $username;
+        include('yourAdmin.php');
+        exit();
+    }
+}
+            
     header('Location:/Sign-in-error.html');
    exit();
 ?>
