@@ -7,9 +7,6 @@ $conn = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName); // Connect
 $name = $_POST["username"]; // Collect username
 $review = $_POST["review"]; // Collect Review
 $note = $_POST["note"]; 
-echo $review;
-echo $note;
-echo $name;
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
