@@ -1,81 +1,85 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>User/Exerice/Lecon1</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
-  #draggable { width: 50px; height: 50px; padding: 0.5em; }
-  #draggable1 { width: 50px; height: 50px; padding: 0.5em; }
-  #draggable2 { width: 50px; height: 50px; padding: 0.5em; }
-  #draggable3 { width: 50px; height: 50px; padding: 0.5em; }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#draggable" ).draggable();
-    $( "#draggable1" ).draggable();
-    $( "#draggable2" ).draggable();
-    $( "#draggable3" ).draggable();
-  } );
-  </script>
-</head>
-<style>
-  body  {
-  background-image: url("http://clipart-library.com/images/kTMa5GxTj.jpg");*
-  }
 
-  table, th{
-  border: 1px solid black;
-  margin-left:auto;
-  margin-right:auto;
-  height:40px;
-}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Partie V - Chapitre 5 - Exemple 6</title>
+    <style>
+      div {margin: 50px auto;text-align: center; margin-right: 1000px;}
+      #draggable { padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable1 {padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable2 {padding: 5px;width: 150px;background-color: #CCC;}
+      #draggable3 {padding: 5px;width: 150px;background-color: #CCC;}
+      #dropper {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:300px;margin-top:-550px;}
+      #dropper1 {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:300px; auto;}
+      #dropper2 {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:300px;auto;}
+      #dropper3 {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:300px;auto;}
 
-mark { 
-  background-color: #42B00B;
-  color: black;
-}
-  </style>
+    </style>
+  </head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+  <body>
 
-<body>
+    <div id="draggable" draggable="true"><font color="#42B00B"><font size="5"><mark>Hero</mark></FONT></font></div>
+    <div id="draggable1" draggable="true"> <font color="#42B00B"><font size="5"><mark>Birthday</mark></FONT></font></div>
+    <div id="draggable2" draggable="true"> <font color="#42B00B"><font size="5"><mark>Play</mark></FONT></font></div>
+    <div id="draggable3" draggable="true"> <font color="#42B00B"><font size="5"><mark>Dog's</mark></FONT></font></div>
+    <div id="draggable" draggable="true"><font color="#42B00B"><font size="5"><mark>Ero</mark></FONT></font></div>
+    <div id="draggable1" draggable="true"> <font color="#42B00B"><font size="5"><mark>Birtday</mark></FONT></font></div>
+
+    <div id="dropper">"Spiderman Is super _________"</div>
+    <div id="dropper1">"How do you celebrate your _________?"</div>
+    <div id="dropper2">"Kevin like _________ football"</div>
+    <div id="dropper3">" _________ don't like cats "</div>
+
+    
+
+
+    <script>
+    document.querySelector('#dropper').addEventListener('dragover', function(e) {
+        e.preventDefault(); // Annule l'interdiction de "drop"
+    }, false);
+
+    document.querySelector('#dropper').addEventListener('drop', function(e) {
+        e.preventDefault(); // Cette méthode est toujours nécessaire pour éviter une éventuelle redirection inattendue
+        alert('Good !');
+    }, false);
+
+    document.querySelector('#dropper1').addEventListener('dragover', function(e) {
+        e.preventDefault(); // Annule l'interdiction de "drop"
+    }, false);
+
+    document.querySelector('#dropper1').addEventListener('drop', function(e) {
+        e.preventDefault(); // Cette méthode est toujours nécessaire pour éviter une éventuelle redirection inattendue
+        alert('Good !');
+    }, false);
+
+    document.querySelector('#dropper2').addEventListener('dragover', function(e) {
+        e.preventDefault(); // Annule l'interdiction de "drop"
+    }, false);
+
+    document.querySelector('#dropper2').addEventListener('drop', function(e) {
+        e.preventDefault(); // Cette méthode est toujours nécessaire pour éviter une éventuelle redirection inattendue
+        alert('Good!');
+    }, false);
+
+    document.querySelector('#dropper3').addEventListener('dragover', function(e) {
+        e.preventDefault(); // Annule l'interdiction de "drop"
+    }, false);
+
+    document.querySelector('#dropper3').addEventListener('drop', function(e) {
+        e.preventDefault(); // Cette méthode est toujours nécessaire pour éviter une éventuelle redirection inattendue
+        alert('Good !');
+    }, false);
+
+    </script>
+    
+    
+    
+  </body>
   
-<div id="draggable" class="ui-widget-content">
-    <font color="#42B00B"><font size="10"><mark>I'M</mark></FONT></font>
-</div>
-<div id="draggable1" class="ui-widget-content">
-    <font color="#42B00B"><font size="10"><mark>HER0</mark></FONT></font>
-</div>
- 
-<div id="draggable2" class="ui-widget-content">
-    <font color="#42B00B"><font size="10"><mark>SUPER</mark></FONT></font>
-</div>
- 
-<div id="draggable3" class="ui-widget-content">
-    <font color="#42B00B"><font size="10"> <mark>YOUR</mark></FONT></font>
-</div>
-
-
-<TABLE bgcolor="#E6E6FA" CELLPADDING="10" CELLSPACING="1" WIDTH=100% height=40px  bordercolor="green">
-    <TR>
-        <th> SUBJECT </th>
-        <th> VERBE </th>
-        <th> AGREMMENT </th>
-        <th> ADJECTIVE </th>
-    </TR>
-    <TR>
-        <th>   </th> <th>  </th>  <th>  </th>  <th>  </th>
-    </TR>
-  </TABLE>
-
-  <div class="clearfix">
-      <button type="button" class="cancelbtn"><font color="#42B00B"><font size="14"> Valide</FONT></font></button>
-  </div>
-
-  <div class="text-center"><mark>If you want Help please click : </mark> <a href="Help.html"><font color="#0B65B0"><font size="4"> <mark>here!</mark></FONT></font></a></div>
-
-</body>
+  
+  
 </html>
