@@ -161,7 +161,9 @@
         .btnYourChild {
             color: dodgerblue;
         }
-
+        .btnyouraccountParents{
+            color: dodgerblue;
+        }
         buttonn {
             border: dodgerblue;
             background-color: inherit;
@@ -185,20 +187,26 @@
         <h1>Parent Page</h1>
     </center>
     <div>
+        <img src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
+        margin:0px 0px 0px 950px" >
+    </div>
+         
+
+    <div>
         <center>
-            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style="        height: 100px;
-        width: 100px;
-        padding: 0px
-">
+            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style=" height: 140px;width: 300px;padding: 0px">
         </center>
     </div>
     
     <center>
-        <buttonn herf="Sign-up.html" class="btnAddChild">Add Child</buttonn>
-        <buttonn herf="yourchild.php" class="btnYourChild">Your Child</buttonn>
+        <buttonn onclick="window.location.href = 'Sign-up.html';" class="btnAddChild">Add Child </buttonn>
+        <buttonn onclick="window.location.href = 'yourchild.php';" class="btnYourChild">Your Child</buttonn>
+        <buttonn herf="youraccountParents.php" class="btnyouraccountParents">Your Account</buttonn>
     </center>
 
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin:200px 0px 0px 1000px">LEAVE US A REVIEW</button>
+    <button onclick="document.getElementById('id01').style.display='block'" style="        width: auto;
+        margin: 100px 0px 0px 1000px
+">LEAVE US A REVIEW</button>
 
     <div id="id01" class="modal">
 
