@@ -16,3 +16,4 @@ VALUES ('$name','$review','$note')";//Add Value to Databse
 $conn->query($sql);
 header('Location:/ParentPage.php');
 ?>
+$
