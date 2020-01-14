@@ -14,4 +14,5 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO MyReview (username,review,note)
 VALUES ('$name','$review','$note')";//Add Value to Databse
 $conn->query($sql);
+header('Location:/ParentPage.php');
 ?>
