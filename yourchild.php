@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +31,8 @@ tr:nth-child(even) {background-color: #f2f2f2}
 </style>
 </head>
 <body>
-    <button onclick="window.location.href = 'home.php';" class="button">Return</button>
-<h1 style="text-align: center;">Review</h1>
+    <button onclick="window.location.href = 'ParentPage.php';" class="button">Return</button>
+<h1 style="text-align: center;">Your Children</h1>
 <table>
 <tr>
 <th>Username</th>
