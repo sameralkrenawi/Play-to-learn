@@ -40,13 +40,13 @@
             background-color: #1c87c9;
             color: white;
             font-size: 16px;
-            padding: 3px 10px;
+            padding: 0.5px 4px;
             border: none;
             cursor: pointer;
             border-radius: 15px;
             text-align: center;
-            margin-left: 120px;
-            margin-top: 105px;
+            margin-left: 60px;
+            margin-top: 40;
           }
      
     .container .btn:hover {
@@ -62,13 +62,13 @@
             background-color: #1c87c9;
             color: white;
             font-size: 16px;
-            padding: 3px 10px;
+            padding:  0.5px 4px;
             border: none;
             cursor: pointer;
             border-radius: 15px;
             text-align: center;
-            margin-left: 120px;
-            margin-top: 350px;
+            margin-left: 60;
+            margin-top: 115px;
           }
           
     .container2 .btn2:hover {
@@ -83,13 +83,13 @@
             background-color: #1c87c9;
             color: white;
             font-size: 16px;
-            padding: 3px 10px;
+            padding:  0.5px 4px;
             border: none;
             cursor: pointer;
             border-radius: 15px;
             text-align: center;
-            margin-left: 120px;
-            margin-top: 600px;
+            margin-left: 60;
+            margin-top: 188;
           }
           
     .container2 .btn2:hover {
@@ -104,16 +104,75 @@
             background-color: #1c87c9;
             color: white;
             font-size: 16px;
-            padding: 3px 10px;
+            padding: 0.5px 4px;
             border: none;
             cursor: pointer;
             border-radius: 15px;
             text-align: center;
-            margin-left: 120px;
-            margin-top: 850px;
+            margin-left: 60;
+            margin-top: 258px;
           }
           
     .container3 .btn3:hover {
             background-color: black;
             color: white;
           }
+
+ 
+    .container4 .btn4 {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #1c87c9;
+            color: white;
+            font-size: 16px;
+            padding: 0.5px 4px;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 332px;
+          }
+          
+      .container4 .btn4:hover {
+            background-color: black;
+            color: white;
+          }
+
+      .container5 .btn5{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #1c87c9;
+            color: white;
+            font-size: 16px;
+            padding: 0.5px 4px;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+            text-align: center;
+            margin-left: 530px;
+            margin-top: 10;
+          }
+          
+    .container5 .btn5:hover {
+            background-color: black;
+            color: white;
+          }
+
+      .button {
+            background-color: #1c87c9;
+            border: none;
+            color: white;
+            padding: 20px 34px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-left:0px;
+            border-radius: 15px;
+            }
