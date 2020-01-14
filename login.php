@@ -12,7 +12,6 @@ $requete = "SELECT * FROM MyGuests";
 $exec_requete = mysqli_query($db,$requete);
 $repons = mysqli_fetch_array($exec_requete);
 $temp=0;
-
 while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
     if($repons['username']==$username and (password_verify($password,$repons['password'])==1)){
         session_start();
