@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<?php session_start(); ?>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -82,7 +83,7 @@
             margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
             border: 1px solid #888;
             width: 600px;
-            height: 400px /* Could be more or less, depending on screen size */
+            height: 500px /* Could be more or less, depending on screen size */
         }
 
         /* The Close Button (x) */
@@ -183,29 +184,40 @@
     </style>
 </head> 
 <body>
-    <center>
-        <h1>Parent Page</h1>
-    </center>
-    <div>
-        <img src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
-        margin:0px 0px 0px 950px" >
-    </div>
-         
-
     <div>
         <center>
-            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style=" height: 140px;width: 300px;padding: 0px">
+            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style="width:250px; border-radius: 50%;   display: block;
+        margin-left: auto;
+        margin-right: auto;">
         </center>
     </div>
-    
+    <center>
+        Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
+    </center>
+    <?php
+            session_start();
+            session_start();
+            $_SESSION['username'];
+            $_SESSION['email'];
+                if (empty($_SESSION['username']))
+                {
+            echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
+            echo("<button style=\"margin-left: 540px; width: 190px;
+    height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
+            exit();
+            }
+            ?>     
+   <div>
+        <img onclick="window.location.href = 'disconnect.php';" src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
+        margin:0px 0px 0px 950px" >
+    </div>
     <center>
         <buttonn onclick="window.location.href = 'Sign-up.html';" class="btnAddChild">Add Child </buttonn>
         <buttonn onclick="window.location.href = 'yourchild.php';" class="btnYourChild">Your Child</buttonn>
         <buttonn onclick="window.location.href = 'youraccountParents.php';" class="btnyouraccountParents">Your Account</buttonn>
     </center>
-
-    <button onclick="document.getElementById('id01').style.display='block'" style="        width: auto;
-        margin: 100px 0px 0px 1000px
+    <button onclick="document.getElementById('id01').style.display='block'" style="width: auto;
+        margin: 100px 0px 0px 1000px;
 ">LEAVE US A REVIEW</button>
 
     <div id="id01" class="modal">
@@ -214,14 +226,6 @@
 
             <div class="container">
                 <h1 style="text-align: center;"> Leave us a review</h1>
-
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
-
-                <label for="psw"><b>Review</b></label>
-
-                <textarea class="review" placeholder="Enter your review here..." name="review"></textarea>
-
                 <div class="champ">
                     <label for="note"><b>Note</b></label>
                     <select id="note" name="note">
@@ -232,15 +236,20 @@
                         <option value="5">5</option>
                     </select>
                 </div>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="psw"><b>Review</b></label>
+
+                <textarea class="review" placeholder="Enter your review here..." name="review"></textarea>
                 <button type="submit">Send</button>
             </div>
-
             <div class="container" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>
     </div>
-
+<?php include('testreview.html')?>
     <script>
         // Get the modal
         var modal = document.getElementById('id01');
