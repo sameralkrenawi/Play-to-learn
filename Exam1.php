@@ -6,7 +6,6 @@
             $dbName="u815710449_playtolearn";
             $db = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName)
                 or die('could not connect to database');
-                echo $_GET['t'];
             $note = 100 - 10*2*$_GET['t'];
             $name=$_SESSION['username'];
             $sql = "UPDATE MyGuests SET note='$note' WHERE username='$name' ";
