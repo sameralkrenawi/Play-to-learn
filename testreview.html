@@ -35,7 +35,17 @@ button {
   border-radius: 8px;
   font-size:18px;
 }
-
+buttont {
+   background-color: #00BFFF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 18px;
+}
 button:hover {
   opacity: 0.8;
 }
@@ -58,7 +68,7 @@ span.psw {
 }
 
 /* The Modal (background) */
-.modal {
+.modall {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -73,7 +83,7 @@ span.psw {
 }
 
 /* Modal Content/Box */
-.modal-content {
+.modal-content1 {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
@@ -128,53 +138,53 @@ span.psw {
 <body>
 
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LEAVE US A REVIEW</button>
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;margin:100px 0px 0px 1000px;">LEAVE US A REPORT</button>
 
-<div id="id01" class="modal">
+<div id="id02" class="modall">
   
-  <form class="modal-content animate" action="review.php" method="post">
+  <form class="modal-content animate1" action="report.php" method="post">
 
     <div class="container">
-      <h1 style="text-align: center;"> Leave us a review</h1>
-      
+      <h1 style="text-align: center;"> Leave us a report</h1>
+      <div class="champ">
+        <label for="note"><b>Where ? </b></label>
+        <select id="note" name="note">
+            <option value="Exercises">Exercises</option>
+            <option value="Lesson">Lesson</option>
+            <option value="Connection">Connection</option>
+            <option value="Sign-up">Sign-up</option>
+            <option value="Other">Other</option>
+        </select>
+    </div> 
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
-
-      <label for="psw"><b>Review</b></label>
+        
+      <label for="psw"><b>Report</b></label>
       
-      <textarea class="review" placeholder="Enter your review here..."  name="review"></textarea>
+      <textarea class="review" placeholder="Tell us where is the problem..."  name="report"></textarea>
       
-      <div class="champ">
-        <label for="note"><b>Note</b></label>
-        <select id="note" name="note">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    </div>  
       <button type="submit">Send</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
 </div>
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
+var modall = document.getElementById('id02');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == modall) {
+        modall.style.display = "none";
     }
 }
 </script>
 
 </body>
 </html>
+
 
