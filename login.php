@@ -136,6 +136,7 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
     if($repons['username']==$username){
         session_start();
         $_SESSION['username'] = $username;
+        $_SESSION['base']='Admin';
         include('yourAdmin.php');
         exit();
     }
