@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<?php session_start(); ?>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,6 +8,8 @@
     
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
+        
+        
 
 /* Full-width input fields */
         input[type=text] {
@@ -51,7 +54,6 @@
             background-color: #f44336;
         }
 
-
         .container {
             padding: 16px;
         }
@@ -82,7 +84,7 @@
             margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
             border: 1px solid #888;
             width: 600px;
-            height: 400px /* Could be more or less, depending on screen size */
+            height: 500px /* Could be more or less, depending on screen size */
         }
 
         /* The Close Button (x) */
@@ -180,58 +182,97 @@
         }
         .btnYourChild{
             color: dodgerblue;}
+        .btnExplain{
+            color: dodgerblue
+        }
+        .share-btn {
+            display: inline-block;
+            color: #ffffff;
+            border: none;
+            padding: 0.1em 0.6em;
+            outline: none;
+            text-align: center;
+            font-size: 0.9em;
+            margin: 0 0.2em;
+        }
+
+        .share-btn:focus,
+        .share-btn:hover {
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .share-btn:active {
+        color: #e2e2e2;
+        }
+
+
+        .share-btn.email { background: #444444; }
+    
+
+        .whatsapp{
+        display: none;
+        color: #1DC143;
+        }
+
+        .whatsapp:hover, .whatsapp:focus{
+        background: #1DC143;
+        color: #fff;
+        text-shadow: 0 0 1px rgba(0,0,0,0.2);
+        }
+
+        .whatsapp.activeWhatsapp{
+        display: inline-block;
+        }    
+            
+        
     </style>
 </head> 
 <body>
-    <center>
-        <h1>Parent Page</h1>
-    </center>
     <div>
         <center>
-            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style=" height: 140px;width: 300px;padding: 0px">
+            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style="width:250px; border-radius: 50%;   display: block;
+        margin-left: auto;
+        margin-right: auto;">
         </center>
     </div>
+    <center>
+        Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
+    </center>
     <?php
             session_start();
-            $dbServername = "localhost";
-            $dbUsername = "u815710449_playtolearn";
-            $dbPassword = "Sce2019";
-            $dbName="u815710449_playtolearn";
-            $db = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName)
-                or die('could not connect to database');
-            $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username']));
-            $requete = "SELECT * FROM MyParents";
-            $exec_requete = mysqli_query($db,$requete);
-            $repons = mysqli_fetch_array($exec_requete);
-            while($repons = mysqli_fetch_array($exec_requete)){
-                echo $repons['username'];
-                if ($_SESSION['username']!=$repons['username']){
-                echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
-                echo("<button style=\"margin-left: 540px; width: 190px;height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
-                exit(); 
-                }
-            }
-            if (empty($_SESSION['username']))
-            {
+            session_start();
+            $_SESSION['username'];
+            $_SESSION['email'];
+                if (empty($_SESSION['username']))
+                {
             echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
             echo("<button style=\"margin-left: 540px; width: 190px;
     height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
             exit();
             }
             ?>     
-   <div>
-        <img src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
+    
+    
+    
+    <a href="mailto:?subject= sharing you a fantastic website &body=http://playtolearn.website/
+       i would like to sharing you a fantastic website for your childrens" class="share-btn email">Email</a>
+   
+    
+    <a alt="Whatsapp" href="whatsapp://send" data-text="a fantastic learning website for your childs" data-href="http://playtolearn.website/" class="whatsapp wa_btn"><span class="ion-social-whatsapp"></span> Whatsapp</a>
+    <div>
+        <img onclick="window.location.href = 'disconnect.php';" src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
         margin:0px 0px 0px 950px" >
     </div>
-    
     <center>
         <buttonn onclick="window.location.href = 'Sign-up.html';" class="btnAddChild">Add Child </buttonn>
         <buttonn onclick="window.location.href = 'yourchild.php';" class="btnYourChild">Your Child</buttonn>
-        <buttonn herf="youraccountParents.php" class="btnyouraccountParents">Your Account</buttonn>
+        <buttonn onclick="window.location.href = 'youraccountParents.php';" class="btnyouraccountParents">Your Account</buttonn>
+        <buttonn onclick="window.location.href = 'LessonsExplinatios.html';" class="btnExplain" >explanations lessons page</buttonn>
+        
     </center>
-
-    <button onclick="document.getElementById('id01').style.display='block'" style="        width: auto;
-        margin: 100px 0px 0px 1000px
+    <button onclick="document.getElementById('id01').style.display='block'" style="width: auto;
+        margin: 100px 0px 0px 1000px;
 ">LEAVE US A REVIEW</button>
 
     <div id="id01" class="modal">
@@ -240,14 +281,6 @@
 
             <div class="container">
                 <h1 style="text-align: center;"> Leave us a review</h1>
-
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
-
-                <label for="psw"><b>Review</b></label>
-
-                <textarea class="review" placeholder="Enter your review here..." name="review"></textarea>
-
                 <div class="champ">
                     <label for="note"><b>Note</b></label>
                     <select id="note" name="note">
@@ -258,15 +291,20 @@
                         <option value="5">5</option>
                     </select>
                 </div>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="psw"><b>Review</b></label>
+
+                <textarea class="review" placeholder="Enter your review here..." name="review"></textarea>
                 <button type="submit">Send</button>
             </div>
-
             <div class="container" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>
     </div>
-
+<?php include('testreview.html')?>
     <script>
         // Get the modal
         var modal = document.getElementById('id01');
@@ -277,6 +315,36 @@
                 modal.style.display = "none";
             }
         }
+        
+        waShBtn = function () {
+            if (this.isIos === true) {
+                var b = [].slice.call(document.querySelectorAll(".wa_btn"));
+                for (var i = 0; i < b.length; i++) {
+                    var t = b[i].getAttribute("data-text");
+                    var u = b[i].getAttribute("data-href");
+                    var o = b[i].getAttribute("href");
+                    var at = "?text=" + encodeURIComponent(t);
+                    if (t) {
+                        at += "%20%0A";
+                    }
+                    if (u) {
+                        at += encodeURIComponent(u);
+                    } else {
+                        at += encodeURIComponent(document.URL);
+                    }
+                    b[i].setAttribute("href", o + at);
+                    b[i].setAttribute("target", "_top");
+                    b[i].setAttribute("target", "_top");
+                    b[i].className += ' activeWhatsapp';
+                }
+            }
+        }
+
+        waShBtn.prototype.isIos = ((navigator.userAgent.match(/Android|iPhone/i) && !navigator.userAgent.match(/iPod|iPad/i)) ? true : false);
+
+        var theWaShBtn = new waShBtn();
+        
+        
     </script>
 
 </body> 
