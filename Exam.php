@@ -113,7 +113,7 @@ function createCookie(name, value, days) {
             session_start();
             $_SESSION['username'];
             $_SESSION['email'];
-                if (empty($_SESSION['username']))
+                if (empty($_SESSION['username']) or $_SESSION['base']!='Child')
                 {
             echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
             echo("<button style=\"margin-left: 540px; width: 190px;
