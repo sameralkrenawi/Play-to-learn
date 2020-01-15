@@ -8,6 +8,8 @@
     
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
+        
+        
 
 /* Full-width input fields */
         input[type=text] {
@@ -51,7 +53,6 @@
             padding: 10px 18px;
             background-color: #f44336;
         }
-
 
         .container {
             padding: 16px;
@@ -181,6 +182,50 @@
         }
         .btnYourChild{
             color: dodgerblue;}
+        .btnExplain{
+            color: dodgerblue
+        }
+        .share-btn {
+            display: inline-block;
+            color: #ffffff;
+            border: none;
+            padding: 0.1em 0.6em;
+            outline: none;
+            text-align: center;
+            font-size: 0.9em;
+            margin: 0 0.2em;
+        }
+
+        .share-btn:focus,
+        .share-btn:hover {
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .share-btn:active {
+        color: #e2e2e2;
+        }
+
+
+        .share-btn.email { background: #444444; }
+    
+
+        .whatsapp{
+        display: none;
+        color: #1DC143;
+        }
+
+        .whatsapp:hover, .whatsapp:focus{
+        background: #1DC143;
+        color: #fff;
+        text-shadow: 0 0 1px rgba(0,0,0,0.2);
+        }
+
+        .whatsapp.activeWhatsapp{
+        display: inline-block;
+        }    
+            
+        
     </style>
 </head> 
 <body>
@@ -207,7 +252,15 @@
             exit();
             }
             ?>     
-   <div>
+    
+    
+    
+    <a href="mailto:?subject= sharing you a fantastic website &body=http://playtolearn.website/
+       i would like to sharing you a fantastic website for your childrens" class="share-btn email">Email</a>
+   
+    
+    <a alt="Whatsapp" href="whatsapp://send" data-text="a fantastic learning website for your childs" data-href="http://playtolearn.website/" class="whatsapp wa_btn"><span class="ion-social-whatsapp"></span> Whatsapp</a>
+    <div>
         <img onclick="window.location.href = 'disconnect.php';" src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
         margin:0px 0px 0px 950px" >
     </div>
@@ -215,6 +268,8 @@
         <buttonn onclick="window.location.href = 'Sign-up.html';" class="btnAddChild">Add Child </buttonn>
         <buttonn onclick="window.location.href = 'yourchild.php';" class="btnYourChild">Your Child</buttonn>
         <buttonn onclick="window.location.href = 'youraccountParents.php';" class="btnyouraccountParents">Your Account</buttonn>
+        <buttonn onclick="window.location.href = 'LessonsExplinatios.html';" class="btnExplain" >explanations lessons page</buttonn>
+        
     </center>
     <button onclick="document.getElementById('id01').style.display='block'" style="width: auto;
         margin: 100px 0px 0px 1000px;
@@ -260,6 +315,36 @@
                 modal.style.display = "none";
             }
         }
+        
+        waShBtn = function () {
+            if (this.isIos === true) {
+                var b = [].slice.call(document.querySelectorAll(".wa_btn"));
+                for (var i = 0; i < b.length; i++) {
+                    var t = b[i].getAttribute("data-text");
+                    var u = b[i].getAttribute("data-href");
+                    var o = b[i].getAttribute("href");
+                    var at = "?text=" + encodeURIComponent(t);
+                    if (t) {
+                        at += "%20%0A";
+                    }
+                    if (u) {
+                        at += encodeURIComponent(u);
+                    } else {
+                        at += encodeURIComponent(document.URL);
+                    }
+                    b[i].setAttribute("href", o + at);
+                    b[i].setAttribute("target", "_top");
+                    b[i].setAttribute("target", "_top");
+                    b[i].className += ' activeWhatsapp';
+                }
+            }
+        }
+
+        waShBtn.prototype.isIos = ((navigator.userAgent.match(/Android|iPhone/i) && !navigator.userAgent.match(/iPod|iPad/i)) ? true : false);
+
+        var theWaShBtn = new waShBtn();
+        
+        
     </script>
 
 </body> 

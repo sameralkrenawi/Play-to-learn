@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,7 @@ tr:nth-child(even) {background-color: #f2f2f2}
 </style>
 </head>
 <body>
-    <button onclick="window.location.href = 'Sign-in.html';" class="button">Return</button>
+    <button onclick="window.location.href = 'yourAdmin.php';" class="button">Return</button>
 <h1 style="text-align: center;">Review</h1>
 <table>
 <tr>

@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html>
 	<head>     
-    	<title> Login to play to read !</title>
+    	<title> Your account </title>
         <meta charset="utf-8">
 		<link rel="stylesheet" href="css/Sign-in.css">
 	</head>
 
 	<body> 
 	<div class='login-form'>
-		<form method="post" action="Sign-in.html">
+		<form>
 			<div class="imgcontainer">
 				<img src="image/imageLogin.png" alt="Avatar" class="avatar"> 
 			</div>
@@ -27,15 +27,19 @@
                     exit();
                     }
                     if($_SESSION['username'] !== ""){
-                    echo "Your Username:";
-                    echo $_SESSION['username'];
-                    echo "Your Email:";
-                    echo $_SESSION['email'];
+                    echo '<a style="text-decoration:underline;" >Your Username: </a> <br>';
+                    echo $_SESSION['username'].'<br>';
+                       echo '<a style="text-decoration:underline;" >Your Email: </a> <br>';
+                    echo $_SESSION['email'].'<br>';
+                       echo '<a style="text-decoration:underline;" >Your last Connection: </a> <br>';
+                    echo $_SESSION['last_connection'];
                 }
             ?>  
 				</form>
 			</div>
+			<button onclick="window.location.href = 'ParentPage.php';" class="button">Return</button>
 	</div>
+	
 		</form>
 	</body>
 </html>
