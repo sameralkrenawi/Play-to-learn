@@ -3,6 +3,15 @@
 <html>
 <head>
 <title>All Users</title>
+<?php
+                if (empty($_SESSION['username']) or $_SESSION['base']!="Admin")
+                {
+            echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
+            echo("<button style=\"margin-left: 540px; width: 190px;
+    height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
+            exit();
+            }
+            ?>  
 <style>
 table {
 border-collapse: collapse;
@@ -28,11 +37,22 @@ tr:nth-child(even) {background-color: #f2f2f2}
          margin: 4px 2px;
          cursor: pointer;
 }
+.buttond{
+        box-shadow: 3px 3px 0px 0px;
+         border: 5px #03f302 outset;
+        color:white;
+         background-color:#03f302;
+         padding: 20px 34px;
+         display: block;
+         font-size: 20px;
+         margin: 4px 1250px;
+         cursor: pointer;
+}
 </style>
 </head>
 <body>
     <button onclick="window.location.href = 'yourAdmin.php';" class="button">Return</button>
-<h1 style="text-align: center;">Child Users</h1>
+<h1 style="text-align: center;">Child Users<button onclick="window.location.href = 'DiagramChild.php';" class="buttond">Diagram Child</button></h1>
 <table>
 <tr>
 <th>Username</th>
@@ -40,6 +60,7 @@ tr:nth-child(even) {background-color: #f2f2f2}
 <th>Email</th>
 <th>Age</th>
 <th>Country</th>
+<th>Last Connection</th>
 </tr>
             <?php
              $dbServername = "localhost";
@@ -55,13 +76,13 @@ tr:nth-child(even) {background-color: #f2f2f2}
             $repons = mysqli_fetch_array($exec_requete);
             while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
                echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["sex"] . "</td><td>"
-            . $repons["email"]. "</td><td>". $repons["age"]. "</td><td>". $repons["Country_IP"]. "</td></tr>";
+            . $repons["email"]. "</td><td>". $repons["age"]. "</td><td>". $repons["Country_IP"]. "</td><td>".$repons["last_connection"]."</td></tr>";
         }
             ?>
 </table>
 
 
-<h1 style="text-align: center;">Parents Users</h1>
+<h1 style="text-align: center;">Parents Users<button onclick="window.location.href = 'DiagramParent.php';" class="buttond">Diagram Parents</button></h1>
 <table>
 <tr>
 <th>Username</th>
@@ -72,7 +93,7 @@ tr:nth-child(even) {background-color: #f2f2f2}
 <th>Child4</th>
 <th>Child5</th>
 <th>Country</th>
-<th>Delete</th>
+<th>Last Connection</th>
 </tr>
             <?php
              $dbServername = "localhost";
@@ -87,7 +108,7 @@ tr:nth-child(even) {background-color: #f2f2f2}
             $exec_requete = mysqli_query($db,$requete);
             $repons = mysqli_fetch_array($exec_requete);
             while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
-               echo "<tr><td>" . $repons["username"]. "</td><td>". $repons["email"] . "</td><td>" . $repons["Child1"] . "</td><td>". $repons["Child2"]. "</td><td>". $repons["Child3"]. "</td><td>".$repons["Child4"]. "</td><td>". $repons["Child5"]. "</td><td>".$repons["Country_IP"]."</td></tr>";
+               echo "<tr><td>" . $repons["username"]. "</td><td>". $repons["email"] . "</td><td>" . $repons["Child1"] . "</td><td>". $repons["Child2"]. "</td><td>". $repons["Child3"]. "</td><td>".$repons["Child4"]. "</td><td>". $repons["Child5"]. "</td><td>".$repons["Country_IP"]."</td><td>".$repons["last_connection"]."</td></tr>";;
         }
             $conn->close();
             ?>
