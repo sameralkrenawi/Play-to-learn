@@ -11,10 +11,10 @@ $currentDate = date('Y-m-d H:i:s');
 $name=$_SESSION['username'];
 if($_SESSION['base']=="Child"){
 $sql = "UPDATE MyGuests SET last_connection='$currentDate' WHERE username='$name' ";
-}
+}//Update to Databse
 else if($_SESSION['base']=="Parent"){
 $sql = "UPDATE MyParents SET last_connection='$currentDate' WHERE username='$name' ";}
- if(mysqli_query($db,$sql)){
+ if(mysqli_query($db,$sql)){//Send to Databse 
            session_unset();
 session_destroy();
 header("Refresh: 1; url=/Sign-in.html");
