@@ -48,4 +48,12 @@ $country_ip = $details->country; //Collect Country from Adress IP
 $sql = "INSERT INTO MyGuests (username,email,sex,password,pays,age,Adress_IP,Country_IP)
 VALUES ('$name','$email','$sex','$password','$country','$age','$ip','$country_ip')";//Add Value to Databse
 $conn->query($sql);
-?>
+$Help=$_SESSION['username'];
+$sql = "UPDATE MyParents SET Child1='$name' WHERE username='$Help'";
+    if(mysqli_query($conn,$sql)){
+                header("Refresh: 0; url=/youraccountChild.php");
+                function function_alert($message) {   
+                echo "<script>alert('$message');</script>"; 
+                } 
+            function_alert("❗Your  child is  register ");
+            }
