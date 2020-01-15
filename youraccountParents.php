@@ -24,10 +24,11 @@
                     echo "Your Username:";
                     echo $_SESSION['username'];
                     echo "Your Email:";
-                    echo $_SESSION['email'];
+					echo $_SESSION['email'];	
                 }
             ?>  
 				</form>
+				<a href="Exam.php" class="button">Next</a></input>
 			</div>
 	</div>
 		</form>
