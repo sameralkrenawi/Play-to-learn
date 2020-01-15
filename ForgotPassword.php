@@ -1,3 +1,5 @@
+
+<?php session_start(); ?>
 <?php 
 $dbServername = "localhost";
 $dbUsername = "u815710449_playtolearn";
@@ -21,7 +23,6 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
         if ($resultat == FALSE) { 
             echo "Echec de l'exécution de la requête.<br />"; 
         } 
-        $from = "contact@playtolearn.website";
         $to = $repons['email'];
          $header="MIME-Version: 1.0\r\n";
         $header.='From:"PlayToLearn"<password@playtolearn.website>'."\n";
@@ -65,6 +66,70 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
         exit();
     }
 }
-
-    header('Location:/ForgotPassword-Error.html');
+$requete = "SELECT * FROM MyParents";
+$exec_requete = mysqli_query($db,$requete);
+$repons = mysqli_fetch_array($exec_requete);
+while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
+    if($repons['email']==$username){
+        ini_set( 'display_errors', 1 );
+        error_reporting( E_ALL );
+        $new_pass = rand();
+        $new_pass_crypt=password_hash($new_pass,PASSWORD_DEFAULT);
+        $sql = "UPDATE MyGuests SET password='$new_pass_crypt' WHERE email = '$username'";
+        $resultat = mysqli_query($db,$sql);
+        if ($resultat == FALSE) { 
+            echo "Echec de l'exécution de la requête.<br />"; 
+        } 
+        $to = $repons['email'];
+         $header="MIME-Version: 1.0\r\n";
+        $header.='From:"PlayToLearn"<password@playtolearn.website>'."\n";
+        $header.='Content-Type:text/html; charset="utf-8"'."\n";
+        $header.='Content-Transfer-Encoding: 8bit';
+        $subject = "Your new password";
+        $message='
+         <html>
+         <head>
+           <title>Your password</title>
+           <meta charset="utf-8" />
+         </head>
+         <body>
+           <font color="#303030";>
+             <div align="center">
+               <table width="600px">
+                 <tr>
+                   <td>
+                     
+                     <div align="center">Bonjour <b>'.$repons['username'].'</b>,</div>
+                     This is your new password <b>'.$new_pass.'</b>
+                     See you soon on PlayToLearn <a href="#">playtolearn.website</a> !
+                     
+                   </td>
+                 </tr>
+                 <tr>
+                   <td align="center">
+                     <font size="2">
+                       This is an automatic mail. 
+                     </font>
+                   </td>
+                 </tr>
+               </table>
+             </div>
+           </font>
+         </body>
+         </html>
+         ';
+        mail($to,$subject,$message, $header);
+        header('Location:/Sign-in-NewPassword.html');
+        exit();
+    }
+}
+$temp=1;
+    if($temp=1){
+                header("Refresh: 0; url=/ForgotPassword.html");
+                function function_alert($message) {   
+                echo "<script>alert('$message');</script>"; 
+                } 
+            function_alert("❗️Your Email does not exist❗️ ");
+            }
+                
 ?>
