@@ -1,6 +1,19 @@
 <?php session_start();?>
 <!DOCTYPE html>
 <html>
+    <style>
+        .button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+}
+    </style>
 	<head>     
     	<title> Your account </title>
         <meta charset="utf-8">
@@ -19,11 +32,10 @@
 			<div class="container">
 				<form class="form-signin"> 
 					<?php
-                    if (empty($_SESSION['username']))
+                    if (empty($_SESSION['username']) or $_SESSION['base']!="Child")
                     {
                     echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
-                    echo("<button onclick=\"window.location.href = 'Sign-in.html';\"style=\" width: 190px;
-    height: 50px;\" >Login</button>");
+                    echo("<center onclick=\"window.location.href = 'Sign-in.html';\"class=\"button\">Login</center>");
                     exit();
                     }
                     if($_SESSION['username'] !== ""){
@@ -37,7 +49,7 @@
             ?>  
 				</form>
 			</div>
-			<button onclick="window.location.href = 'ParentPage.php';" class="button">Return</button>
+			<button onclick="window.location.href = 'youraccountChild.php';" class="button">Return</button>
 	</div>
 	
 		</form>

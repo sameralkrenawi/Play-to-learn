@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,13 +31,23 @@ tr:nth-child(even) {background-color: #f2f2f2}
 </style>
 </head>
 <body>
-    <button onclick="window.location.href = 'home.php';" class="button">Return</button>
-<h1 style="text-align: center;">Review</h1>
+    <?php
+                if (empty($_SESSION['username']) or $_SESSION['base']!="Parent")
+                {
+            echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
+            echo("<button style=\"margin-left: 540px; width: 190px;
+    height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
+            exit();
+            }
+            ?>  
+    <button onclick="window.location.href = 'ParentPage.php';" class="button">Return</button>
+<h1 style="text-align: center;">Your Children</h1>
 <table>
 <tr>
 <th>Username</th>
 <th>Email</th>
 <th>Note</th>
+<th>Last Connection</th>
 </tr>
             <?php
             $dbServername = "localhost";
@@ -45,36 +56,38 @@ tr:nth-child(even) {background-color: #f2f2f2}
             $dbName="u815710449_playtolearn";
             $db = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName)
                     or die('could not connect to database');
-            $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
-            $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
             $requete = "SELECT * FROM MyGuests";
             $exec_requete = mysqli_query($db,$requete);
             $repons = mysqli_fetch_array($exec_requete);
-            while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
-                if($_SESSION['child1'] == $repons["username"]){
+            while($repons = mysqli_fetch_array($exec_requete)){
+                if($_SESSION['Child1'] == $repons["username"]){
                     $user = $_SESSION['username'];
                     echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["email"] . "</td><td>"
                     . $repons["note"]. "</td></tr>";
                 }
-                if($_SESSION['child2'] == $repons["username"]){
+                if($_SESSION['Child2'] == $repons["username"]){
                     $user = $_SESSION['username'];
                     echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["email"] . "</td><td>"
-                    . $repons["note"]. "</td></tr>";
+                    . $repons["note"].  "</td><td>"
+                    . $repons["last_connection"]."</td></tr>";
                 }
-                if($_SESSION['child3'] == $repons["username"]){
+                if($_SESSION['Child3'] == $repons["username"]){
                     $user = $_SESSION['username'];
-                    echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["email"] . "</td><td>"
-                    . $repons["note"]. "</td></tr>";
+                   echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["email"] . "</td><td>"
+                    . $repons["note"].  "</td><td>"
+                    . $repons["last_connection"]."</td></tr>";
                 }
-                if($_SESSION['child4'] == $repons["username"]){
+                if($_SESSION['Child4'] == $repons["username"]){
                     $user = $_SESSION['username'];
                     echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["email"] . "</td><td>"
-                    . $repons["note"]. "</td></tr>";
+                    . $repons["note"].  "</td><td>"
+                    . $repons["last_connection"]."</td></tr>";
                 }
-                if($_SESSION['child5'] == $repons["username"]){
+                if($_SESSION['Child5'] == $repons["username"]){
                     $user = $_SESSION['username'];
                     echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["email"] . "</td><td>"
-                    . $repons["note"]. "</td></tr>";
+                    . $repons["note"].  "</td><td>"
+                    . $repons["last_connection"]."</td></tr>";
                 }
         }
             $conn->close();

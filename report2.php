@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Review</title>
+<title>Report</title>
 <style>
 table {
 border-collapse: collapse;
@@ -36,8 +36,8 @@ tr:nth-child(even) {background-color: #f2f2f2}
 <table>
 <tr>
 <th>Username</th>
-<th>Review</th>
-<th>Note</th>
+<th>Report</th>
+<th>Where</th>
 </tr>
             <?php
              $dbServername = "localhost";
@@ -48,11 +48,11 @@ tr:nth-child(even) {background-color: #f2f2f2}
                     or die('could not connect to database');
             $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
             $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
-            $requete = "SELECT * FROM MyReview";
+            $requete = "SELECT * FROM MyReport";
             $exec_requete = mysqli_query($db,$requete);
             $repons = mysqli_fetch_array($exec_requete);
             while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
-               echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["review"] . "</td><td>"
+               echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["report"] . "</td><td>"
             . $repons["note"]. "</td></tr>";
         }
             $conn->close();
