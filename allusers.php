@@ -1,144 +1,81 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>All Users</title>
-<?php
-                if (empty($_SESSION['username']) or $_SESSION['base']!="Admin")
+    <meta charset="utf-8" />
+    <title>User Page</title>
+    
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        /*statr of AddChild and YourChild buttons style*/
+        .btn {
+            border: none;
+            background-color: inherit;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #eee;
+        }
+
+        .btnAddChild {
+            color: dodgerblue;
+        }
+
+        .btnYourChild {
+            color: dodgerblue;
+        }
+        .btnyouraccountParents{
+            color: dodgerblue;
+        }
+        buttonn {
+            border: dodgerblue;
+            background-color: inherit;
+            padding: 50px 28px;
+            font-size: 24px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        buttonn:hover{
+            background: #eee;
+        }
+        .btnAddChild{
+            color: dodgerblue;
+        }
+        .btnYourChild{
+            color: dodgerblue;}
+    </style>
+</head> 
+<body>
+    <div>
+        <center>
+            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style="width:250px; border-radius: 50%;   display: block;
+        margin-left: auto;
+        margin-right: auto;">
+        </center>
+    </div>
+    <?php if (empty($_SESSION['username']) or $_SESSION['base']!="Admin")
                 {
             echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
             echo("<button style=\"margin-left: 540px; width: 190px;
     height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
             exit();
             }
-            ?>  
-<style>
-table {
-border-collapse: collapse;
-width: 100%;
-color: #588c7e;
-font-family: monospace;
-font-size: 25px;
-text-align: left;
-}
-th {
-background-color: #588c7e;
-color: white;
-}
-tr:nth-child(even) {background-color: #f2f2f2}
-.button{
-        box-shadow: 3px 3px 0px 0px;
-         border: 5px #03f302 outset;
-        color:white;
-         background-color:#03f302;
-         padding: 20px 34px;
-         display: block;
-         font-size: 20px;
-         margin: 4px 2px;
-         cursor: pointer;
-}
-.buttond{
-        box-shadow: 3px 3px 0px 0px;
-         border: 5px #03f302 outset;
-        color:white;
-         background-color:#03f302;
-         padding: 20px 34px;
-         display: block;
-         font-size: 20px;
-         margin: 4px 1250px;
-         cursor: pointer;
-}
-</style>
-</head>
-<body>
-    <button onclick="window.location.href = 'yourAdmin.php';" class="button">Return</button>
-<h1 style="text-align: center;">Child Users<button onclick="window.location.href = 'DiagramChild.php';" class="buttond">Diagram Child</button></h1>
-<table>
-<tr>
-<th>Username</th>
-<th>Sexe</th>
-<th>Email</th>
-<th>Age</th>
-<th>Country</th>
-<th>Last Connection</th>
-</tr>
-            <?php
-             $dbServername = "localhost";
-            $dbUsername = "u815710449_playtolearn";
-            $dbPassword = "Sce2019";
-            $dbName="u815710449_playtolearn";
-            $db = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName)
-                    or die('could not connect to database');
-            $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
-            $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
-            $requete = "SELECT * FROM MyGuests";
-            $exec_requete = mysqli_query($db,$requete);
-            $repons = mysqli_fetch_array($exec_requete);
-            while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
-               echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["sex"] . "</td><td>"
-            . $repons["email"]. "</td><td>". $repons["age"]. "</td><td>". $repons["Country_IP"]. "</td><td>".$repons["last_connection"]."</td></tr>";
-        }
             ?>
-</table>
+    <center>
+        Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
+    </center>
+    <center>
+        <buttonn onclick="window.location.href = 'tableparent.php';" class="btnYourChild">Parent Users</buttonn>
+        <buttonn onclick="window.location.href = 'tablechild.php';" class="btnYourChild">Child Users</buttonn>
+        <buttonn onclick="window.location.href = 'yourAdmin.php';" class="btnYourChild">Return</buttonn>
+    </center>
 
 
-<h1 style="text-align: center;">Parents Users<button onclick="window.location.href = 'DiagramParent.php';" class="buttond">Diagram Parents</button></h1>
-<table>
-<tr>
-<th>Username</th>
-<th>Email</th>
-<th>Child1</th>
-<th>Child2</th>
-<th>Child3</th>
-<th>Child4</th>
-<th>Child5</th>
-<th>Country</th>
-<th>Last Connection</th>
-</tr>
-            <?php
-             $dbServername = "localhost";
-            $dbUsername = "u815710449_playtolearn";
-            $dbPassword = "Sce2019";
-            $dbName="u815710449_playtolearn";
-            $db = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName)
-                    or die('could not connect to database');
-            $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
-            $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
-            $requete = "SELECT * FROM MyParents";
-            $exec_requete = mysqli_query($db,$requete);
-            $repons = mysqli_fetch_array($exec_requete);
-            while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
-               echo "<tr><td>" . $repons["username"]. "</td><td>". $repons["email"] . "</td><td>" . $repons["Child1"] . "</td><td>". $repons["Child2"]. "</td><td>". $repons["Child3"]. "</td><td>".$repons["Child4"]. "</td><td>". $repons["Child5"]. "</td><td>".$repons["Country_IP"]."</td><td>".$repons["last_connection"]."</td></tr>";;
-        }
-            $conn->close();
-            ?>
-</table>
-
-</body>
-<script>
-$(document).on("click", ".delete", function(event)
-{
-    var sData = "?id=" + $(this).data("id");
-    $.ajax({
-        url: "pages/delete_script.php",
-        type: "POST",
-        data: sData,
-        success: function(sResult)
-        {
-            // Process the data you got back from the delete script
-            // For example removing the row if successfully deleted:
-            if(sResult == "OK")
-            {
-                $(this).closest("tr").remove();
-            }
-        },
-        statusCode: 
-        {
-            404: function() 
-            {
-                alert("page not found");
-            }
-        }
-    });
-});</script>
+</body> 
 </html>
