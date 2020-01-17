@@ -9,107 +9,55 @@
     <meta charset="utf-8" />
     <title>Hello world</title>
     <style>
-        h1 {
-            color: #325e5f;
-            font-size: 70px;
-            font-style: oblique;
+        .btnlessons {
+            color: dodgerblue;
         }
 
-        h2 {
-            color: cadetblue;
-            font-size: 50px;
+        .btnexercises {
+            color: dodgerblue;
         }
-
-        h3 {
-            color: cadetblue;
-            font-size: 50px;
+        .btnexam{
+            color:dodgerblue;
         }
-
-        h4 {
-            color: cadetblue;
-            font-size: 50px;
-        }
-        h5{
-            text-decoration: underline;
-        }
-        .c1-button{
-            font-size:30px;
-        }
-         .button {
-            box-shadow: 3px 3px 0px 0px;
-            border: 5px #03f302 outset;
-            color: white;
-            border-radius: 5px;
-            background-color: #03f302;
-            padding: 20px 34px;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            font-size: 50px;
-            margin: 4px 2px;
+        buttonn {
+            border: dodgerblue;
+            background-color: inherit;
+            padding: 50px 28px;
+            font-size: 24px;
             cursor: pointer;
-            margin-left: auto;
-            margin-right: auto;
-            width: 500px;
-            margin-top: -320px;
-            margin-bottom: auto;
+            display: inline-block;
+        }
+        buttonn:hover{
+            background: #eee;
+        }
+       
         
     </style>
 </head>
-<body style="background-color:#bbffff">
+<body>
     <center>
         <h1>Child Page</h1>
     </center>
+    <div>
+        <img src="image/disconnect.png" class="btn btn-primary" id="btn-y" style="        height: 60px;
+        width: 60px;
+        padding: 0px;
+        margin: 0px 0px 0px 950px" >
+    </div>
+         
 
-    <!-- Navigation -->
+    <div>
+        <center>
+            <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style=" height: 140px;width: 300px;padding: 0px">
+        </center>
+    </div>
+    
     <center>
-        <nav class="c1-bar c1-black">
-            <a href="home1.php" class="c1-button c1-bar-item">Home</a>
-            <a href="#lessons.html" class="c1-button c1-bar-item">Lessons</a>
-            <a href="#ecercises.html" class="c1-button c1-bar-item">Exercises</a>
-            <a href="#exams.html" class="c1-button c1-bar-item">Exam</a>
-        </nav>
+        <buttonn onclick="window.location.href = 'Sign-up.html';" class="btnlessons">Lessons </buttonn>
+        <buttonn onclick="window.location.href = 'yourchild.php';" class="btnexercises">Exercises</buttonn>
+        <buttonn onclick="window.location.href = 'youraccountParents.php';" class="btnexam">Exam</buttonn>
     </center>
 
-    <!--article-->
-    <center>
-        <article> welcome to your "play to learan" page, you can get all lessons,excercises, exams even your grades here. </article>
-    </center>
-
-   
-
-    <!-- Slide Show -->
-    <censter>
-        <section>
-            <img class="ChildSlides" src="abc.jpg" style="width:100%">
-            <img class="ChildSlides" src="def.jpg" style="width:100%">
-            <img class="ChildSlides" src="ghi.jpg" style="width:100%">
-            <img class="ChildSlides" src="jkl.jpg" style="width:100%">
-            <img class="ChildSlides" src="mno.jpg" style="width:100%">
-            <img class="ChildSlides" src="pqr.jpg" style="width:100%">
-            <img class="ChildSlides" src="stu.jpg" style="width:100%">
-            <img class="ChildSlides" src="vwxyz.jpg" style="width:100%">
-        </section>
-    </censter>
-
-
-    <script>
-        // Automatic Slideshow - change image every 3 seconds
-        var myIndex = 0;
-        carousel();
-
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("ChildSlides");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            myIndex++;
-            if (myIndex > x.length) { myIndex = 1 }
-            x[myIndex - 1].style.display = "block";
-            setTimeout(carousel, 3000);
-        }
-    </script>
 
 
 </body>
