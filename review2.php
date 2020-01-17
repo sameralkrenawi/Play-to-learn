@@ -31,7 +31,7 @@ tr:nth-child(even) {background-color: #f2f2f2}
 </style>
 </head>
 <body>
-    <button onclick="window.location.href = 'yourAdmin.php';" class="button">Return</button>
+    <button onclick="window.location.href = 'yourAdmin.php';" class="button" style="margin-top:10px;">Return</button>
 <h1 style="text-align: center;">Review</h1>
 <table>
 <tr>

@@ -2,9 +2,30 @@
 <!DOCTYPE html>
 <html>
     <head>     
+    
+    
     	<title> Lesson !</title>
         <meta charset="utf-8">
 		<link rel="stylesheet" href="css/lesson4.css">
+		
+		 <style>
+		 buttton {
+            text-align: center;
+            background-color: #00BFFF;
+            color: white;
+            padding: 14px 20px;
+            margin-top:-50px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            float:right;
+            }
+       
+        buttton:hover {
+            opacity: 0.8;
+            }</style>
 	</head>
 <body>
     <div class='lesson1-form'>
@@ -37,7 +58,11 @@
         background-image:url(image/imageLesson1.jpg);
         background-color:0;
         }
+        
     </style>
+    
+    <buttton onclick="window.location.href = 'Menu-Lesson.php';"> -Menu-</buttton>
 </body>
+
+
 </html>
--->

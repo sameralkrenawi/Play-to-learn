@@ -7,9 +7,24 @@
 		<link rel="stylesheet" href="css/Sign-in.css">
 	</head>
 
+
 	<body> 
+    
+      
 	<div class='login-form'>
-		<form>
+	    <form>
+	        
+	        <style type="text/css">
+      body {
+        
+      background-image:url(image/userparent.png);
+      background-color:0;
+       background-position-X:300px;
+        background-size:55em;
+       
+      }
+      </style>
+		   
 			<div class="imgcontainer">
 				<img src="image/imageLogin.png" alt="Avatar" class="avatar"> 
 			</div>
@@ -38,8 +53,7 @@
 				</form>
 			</div>
 			<button onclick="window.location.href = 'ParentPage.php';" class="button">Return</button>
-	</div>
-	
 		</form>
+	</div>
 	</body>
 </html>

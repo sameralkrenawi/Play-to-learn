@@ -7,7 +7,12 @@
     <title></title>
     
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
+       
+        mark {
+  background-color: dodgerblue;
+  color: white;
+  
+}
 
 /* Full-width input fields */
         input[type=text] {
@@ -30,7 +35,7 @@
         }
         /* Set a style for all buttons */
         button {
-            background-color: #00BFFF;
+            background-color: #00FFF;
             color: white;
             padding: 14px 20px;
             margin: 8px 0;
@@ -94,6 +99,7 @@
             color: #000;
             font-size: 35px;
             font-weight: bold;
+            
         }
 
             .close:hover,
@@ -144,7 +150,7 @@
         /*statr of AddChild and YourChild buttons style*/
         .btn {
             border: none;
-            background-color: inherit;
+            background-color: yellow;
             padding: 14px 28px;
             font-size: 16px;
             cursor: pointer;
@@ -182,14 +188,30 @@
         .btnYourChild{
             color: dodgerblue;}
     </style>
+    
+    
 </head> 
 <body>
+    
+     <style type="text/css">
+      body {
+        
+      background-image:url(image/enfant-log.jpg);
+      background-color:0;
+       background-position-X:00px;
+        background-size:80em;
+        background-repeat:no-repeat;
+       
+      }
+      </style>
+    
     <div>
         <center>
             <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style="width:250px; border-radius: 50%;   display: block;
         margin-left: auto;
         margin-right: auto;">
         </center>
+        
     </div>
     <center>
         Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
@@ -204,17 +226,16 @@
             }
             ?>     
    <div>
-        <img onclick="window.location.href = 'disconnect.php';" src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
-        margin:0px 0px 0px 950px" >
+        <img onclick="window.location.href = 'disconnect.php';" src="image/deconnexion.jpg" class="btn btn-primary" id="btn-y" style=" height: 85px;width:85px;padding:0px;
+        margin:-200px 0px 0px 1050px" >
     </div>
     <center>
-        <buttonn onclick="window.location.href = 'Menu_Exercice.php';" class="btnAddChild">Exercises </buttonn>
-        <buttonn onclick="window.location.href = 'Menu-Lesson.php';" class="btnYourChild">Lesson</buttonn>
-        <buttonn onclick="window.location.href = 'Exam.php';" class="btnyouraccountParents">Exam</buttonn>
-        <buttonn onclick="window.location.href = 'yourChildaccount.php';" class="btnyouraccountParents">Your Account</buttonn>
+        <buttonn onclick="window.location.href = 'Menu_Exercice.php';" class="btnAddChild"><mark>Exercises</mark> </buttonn>
+        <buttonn onclick="window.location.href = 'Menu-Lesson.php';" class="btnYourChild"><mark>Lesson</mark></buttonn>
+        <buttonn onclick="window.location.href = 'Exam.php';" class="btnyouraccountParents"><mark>Exam</mark></buttonn>
+        <buttonn onclick="window.location.href = 'yourChildaccount.php';" class="btnyouraccountParents"><mark>Your Account</mark></buttonn>
     </center>
-    <button onclick="document.getElementById('id01').style.display='block'" style="width: auto;
-        margin: 100px 0px 0px 1000px;
+    <button onclick="document.getElementById('id01').style.display='block'" style="margin-top:10px;
 ">LEAVE US A REVIEW</button>
 
     <div id="id01" class="modal">
@@ -258,6 +279,6 @@
             }
         }
     </script>
-
+     <img src="image/loupe.png" type="button" value="ZOOM+"  style="width:50px" onClick="document.body.style.zoom=1.5">
 </body> 
 </html>
