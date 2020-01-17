@@ -4,15 +4,29 @@
 <html>
     <style>
         .button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 15px;
-    font-weight: bold;
+         background-color: #1c87c9;
+         border: none;
+         color: white;
+         padding: 20px 34px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 20px;
+         margin: 4px 2px;
+         cursor: pointer;
+         margin-top: 0px;
+         margin-left:0px;
+         border-radius: 15px;
+         }
+buttonn {
+  background-color: #00BFFF;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 1000px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size:10px;
 }
     </style>
 	<head>     
@@ -21,6 +35,17 @@
 		<link rel="stylesheet" href="css/Sign-in.css">
 	</head>
 	<body> 
+	
+	
+	<style type="text/css">
+      body {
+      background-image:url(image/reglage-enfant.jpg);
+      background-color:0;
+      background-size:55em;
+   
+       }
+       
+      </style>
 	<div class='login-form'>
 	    <form>
 	        <div class="imgcontainer">
@@ -51,23 +76,25 @@
                     echo("<center onclick=\"window.location.href = 'Sign-in.html';\"class=\"button\">Login</center>");
                     exit();
                     }
-                    if($_SESSION['username'] !== ""){
                         if(empty($_SESSION['image']))
                             echo "<a class=\"button\" onclick=\"window.location.href = 'Newpicture.php';\" type=\"submit\" name=\"upload\">Choose Picture</a>";
                         else echo "<a class=\"button\" onclick=\"window.location.href = 'Newpicture.php';\" type=\"submit\" name=\"upload\">Change Picture</a>";
                         echo '<br>';
                         echo '<br>';
                     echo '<a style="text-decoration:underline;" >Your Username: </a> <br>';
-                    echo $_SESSION['username'].'<br>';
+                    echo $_SESSION['username']." ";
+                  
                        echo '<a style="text-decoration:underline;" >Your Email: </a> <br>';
                     echo $_SESSION['email'].'<br>';
                        echo '<a style="text-decoration:underline;" >Your last Connection: </a> <br>';
                     echo $_SESSION['last_connection'];
+                     echo " "."<button onclick=\"window.location.href = 'ChangeUsername.php';\">Change Username</button>".'<br>';
                     
-                }
             ?>  
 				</form>
-			
+    
 			</div>
+			<img src="image/loupe.png" type="button" value="ZOOM+"  style="width:50px" onClick="document.body.style.zoom=1.5">
 			<button onclick="window.location.href = 'youraccountChild.php';" class="button">Return</button>
+		
 	</div>
