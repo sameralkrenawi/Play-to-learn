@@ -1,4 +1,4 @@
-﻿<?php session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -7,8 +7,15 @@
     <title></title>
     
     <style>
+    
+    
         body {font-family: Arial, Helvetica, sans-serif;}
         
+              mark {
+                background-color: white;
+                color: grey;
+  
+                }
         
 
 /* Full-width input fields */
@@ -145,7 +152,7 @@
         /*statr of AddChild and YourChild buttons style*/
         .btn {
             border: none;
-            background-color: inherit;
+            background-color: white;
             padding: 14px 28px;
             font-size: 16px;
             cursor: pointer;
@@ -207,7 +214,11 @@
         }
 
 
-        .share-btn.email { background: #444444; }
+        .share-btn.email {
+            background: #444444;
+            
+            
+        }
     
 
         .whatsapp{
@@ -227,24 +238,45 @@
             
         
     </style>
+  
 </head> 
 <body>
+    <style type="text/css">
+      body {
+        
+      background-image:url(image/userparent.jpg);
+      background-color:0;
+       background-position-X:300px;
+        background-size:55em;
+       
+      }
+      </style>
+    
     <div>
+        
+         <style type="text/css">
+      body {
+        
+      background-image:url(image/userparent.png);
+      background-color:0;
+       background-position-X:300px;
+        background-size:55em;
+       
+      }
+      </style>
+        
         <center>
             <img src="image/imageLogin.png" class="btn btn-primary" id="btn-y" style="width:250px; border-radius: 50%;   display: block;
         margin-left: auto;
         margin-right: auto;">
         </center>
     </div>
-    <center>
-        Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
-    </center>
     <?php
             session_start();
             session_start();
             $_SESSION['username'];
             $_SESSION['email'];
-                if (empty($_SESSION['username']))
+                if (empty($_SESSION['username']) or $_SESSION['base']!='Parent')
                 {
             echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
             echo("<button style=\"margin-left: 540px; width: 190px;
@@ -252,28 +284,32 @@
             exit();
             }
             ?>     
+    <center>
+        Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
+    </center>
     
-    
-    
-    <a href="mailto:?subject= sharing you a fantastic website &body=http://playtolearn.website/
-       i would like to sharing you a fantastic website for your childrens" class="share-btn email">Email</a>
+  
    
     
-    <a alt="Whatsapp" href="whatsapp://send" data-text="a fantastic learning website for your childs" data-href="http://playtolearn.website/" class="whatsapp wa_btn"><span class="ion-social-whatsapp"></span> Whatsapp</a>
+    <a alt="Whatsapp" href="whatsapp://send" data-text="a fantastic learning website for your childs" data-href="http://playtolearn.website/" class="whatsapp wa_btn"><span class="ion-social-whatsapp">Whatsapp</span> </a>
+    
+    
     <div>
-        <img onclick="window.location.href = 'disconnect.php';" src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
-        margin:0px 0px 0px 950px" >
+        <img onclick="window.location.href = 'disconnect.php';" src="image/deconnexion.jpg" class="btn btn-primary" id="btn-y" style=" height: 85px;width:85px;padding:0px;
+        margin:-200px 0px 0px 1050px" >
     </div>
     <center>
-        <buttonn onclick="window.location.href = 'Sign-up.html';" class="btnAddChild">Add Child </buttonn>
-        <buttonn onclick="window.location.href = 'yourchild.php';" class="btnYourChild">Your Child</buttonn>
-        <buttonn onclick="window.location.href = 'youraccountParents.php';" class="btnyouraccountParents">Your Account</buttonn>
-        <buttonn onclick="window.location.href = 'LessonsExplinatios.html';" class="btnExplain" >explanations lessons page</buttonn>
+        <buttonn onclick="window.location.href = 'Sign-up.html';" class="btnAddChild"><mark>Add Child </mark></buttonn>
+        <buttonn onclick="window.location.href = 'yourchild.php';" class="btnYourChild"><mark>Your Child</mark> </buttonn>
+        <buttonn onclick="window.location.href = 'youraccountParents.php';" class="btnyouraccountParents"><mark>Your Account</mark></buttonn>
+        <buttonn onclick="window.location.href = 'LessonExplanation.php';" class="btnExplain" ><mark>explanations lessons page</mark></buttonn>
+        <buttonn onclick="window.location.href = 'Notification.php';" class="btnAddChild"><mark> Notification </mark></buttonn>
         
     </center>
-    <button onclick="document.getElementById('id01').style.display='block'" style="width: auto;
-        margin: 100px 0px 0px 1000px;
-">LEAVE US A REVIEW</button>
+    <button onclick="document.getElementById('id01').style.display='block'" style="margin-top:10px;">LEAVE US A REVIEW</button>
+    
+      <button> <a href="mailto:?subject= sharing you a fantastic website &body=http://playtolearn.website/
+       i would like to sharing you a fantastic website for your childrens" text-align: center;">Email</a></button>
 
     <div id="id01" class="modal">
 
@@ -346,6 +382,9 @@
         
         
     </script>
+    <div>
 
+    <img src="image/loupe.png" type="button" value="ZOOM+"  style="width:50px" onClick="document.body.style.zoom=1.5">
+    </div>
 </body> 
 </html>
