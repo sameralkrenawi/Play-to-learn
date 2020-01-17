@@ -11,7 +11,7 @@
                 if($_SESSION['username'] !== ""){
                     $user = $_SESSION['username'];
                     // afficher un message
-                    echo "Hello $user";
+                    echo "Bonjour $user, vous êtes connecté";
                 }
             ?>
             

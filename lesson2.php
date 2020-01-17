@@ -6,11 +6,29 @@
     <meta charset="utf-8">
 	<link rel="stylesheet" href="css/lesson2.css">
 <body>
+     <style>
+		 buttton {
+            text-align: center;
+            background-color: #00BFFF;
+            color: white;
+            padding: 14px 20px;
+            margin-top:-50px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            float:right;
+            }
+       
+        buttton:hover {
+            opacity: 0.8;
+            }</style>
     
         <div class="right_column">
     <h1 style="text-align: center;"><span>Animal names vocabulary with pictures and words</span></h1>
     <p style="text-align: center;"><img src="image/listofanimals.jpg" alt="Learning animals names with pictures" title="Learning animals names with pictures" width="760"></p>
-    <h2 style="text-align: center;"><span style="color: #ff0000;"><strong><em><span style="font-family: 'arial black', 'avant garde'; font-size: medium;">List of animals names&nbsp;</span></em></strong></span></h2>
+    <h2 style="text-align: center;"><span style="color: #00BFFF;"><strong><em><span style="font-family: 'arial black', 'avant garde'; font-size: medium;">List of animals names&nbsp;</span></em></strong></span></h2>
     <table style="background-color: #fcfdc2; margin-left: auto; margin-right: auto;">
     <tbody>
     <tr>
@@ -77,5 +95,5 @@
     </tr>
     </tbody>
     </table>
-</body>
+     <buttton onclick="window.location.href = 'Menu-Lesson.php';"> -Menu-</buttton>
 </html>

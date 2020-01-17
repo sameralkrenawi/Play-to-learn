@@ -1,4 +1,4 @@
-<?php  $dbServername = "localhost";
+  <?php  $dbServername = "localhost";
             $dbUsername = "u815710449_playtolearn";
             $dbPassword = "Sce2019";
             $dbName="u815710449_playtolearn";

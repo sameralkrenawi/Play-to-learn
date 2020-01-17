@@ -35,16 +35,32 @@
 /* On mouse-over */
 .btn:hover {background: #eee;}
         
+        buttton {
+            background-color: #00BFFF;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+       
+        buttton:hover {
+            opacity: 0.8;
+        }
+
     </style>
 </head>
 
-<body style="background-color: #bbffff
+<body style="background-color: #bbffff">
 
 
-">
+
     
     
-    <center>
+     <center>
         <h1>Lessons Explanations Page</h1>
     </center>
 
@@ -68,14 +84,10 @@
             <p><a href="PDF/lesson3Explain.pdf">lesson3 explain</a></p>
         </object>
 
-        <object data="lesson1Explain.pdf" type="application/pdf" width="100%" height="100%">
-            <p><a href="PDF/lesson4Explain.pdf">lesson4 explain</a></p>
-        </object>
     </center>
 
     <a href="ParentPage.php" class="button">- Explanations lessons page -</a></input>
     <a href="ParentPage.php" class="button"style="float:right"> - Menu - </a></input>
-
 
 
 
