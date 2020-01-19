@@ -15,15 +15,19 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
     echo $name;
     echo $repons['username'];
     if($repons['username']==$name ){
-        echo $name;
-        header('Location:/Sign-up-Parents-user.html');
-        $temp=1;
+          header("Refresh: 0; url=/Sign-up-Parents.html");
+                function function_alert($message) {   
+                echo "<script>alert('$message');</script>"; 
+                } 
+            function_alert("Username already exist,try with another one ");
         exit();
-    }
+        }
     if($repons['email']==$email ){
-        echo $name;
-        header('Location:/Sign-up-Parents-email.html');
-        $temp=1;
+       header("Refresh: 0; url=/Sign-up-Parents.html");
+                function function_alert($message) {   
+                echo "<script>alert('$message');</script>"; 
+                } 
+            function_alert("Email already exist,try with another one ");
         exit();
     }
     

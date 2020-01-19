@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Partie V - Chapitre 5 - Exemple 6</title>
+
     <style>
       div {margin: 50px auto;text-align: center; margin-right: 1000px;}
       #draggable { padding: 5px;width: 150px;background-color: #CCC;}
@@ -16,6 +17,25 @@
       #dropper3 {padding-top: 40px;width: 400px;height: 60px;border: 2px solid #222;background-color: #888;text-align: center;margin-right:300px;auto;}
 
     </style>
+    
+    <style>
+		 buttton {
+            text-align: center;
+            background-color: #00BFFF;
+            color: white;
+            padding: 14px 20px;
+            margin-top:20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            float:right;
+            }
+       
+        buttton:hover {
+            opacity: 0.8;
+            }</style>
   </head>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -34,7 +54,10 @@
     <div id="dropper2">"Kevin like _________ football"</div>
     <div id="dropper3">" _________ don't like cats "</div>
 
+
     
+    <buttton onclick="window.location.href = 'Menu_Exercice.php';"> -Menu-</buttton>
+
 
 
     <script>
@@ -73,6 +96,9 @@
         e.preventDefault(); // Cette méthode est toujours nécessaire pour éviter une éventuelle redirection inattendue
         alert('Good !');
     }, false);
+    
+    
+    
 
     </script>
     

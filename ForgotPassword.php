@@ -62,7 +62,14 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
          </html>
          ';
         mail($to,$subject,$message, $header);
-        header('Location:/Sign-in-NewPassword.html');
+           $temp=1;
+    if($temp==1){
+                header("Refresh: 0; url=/Sign-in.html");
+                function function_alert($message) {   
+                echo "<script>alert('$message');</script>"; 
+                } 
+            function_alert("We send you your Username and your new Password by email");
+            } 
         exit();
     }
 }
@@ -119,7 +126,14 @@ while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
          </html>
          ';
         mail($to,$subject,$message, $header);
-        header('Location:/Sign-in-NewPassword.html');
+        $temp=1;
+    if($temp==1){
+                header("Refresh: 0; url=/Sign-in.html");
+                function function_alert($message) {   
+                echo "<script>alert('$message');</script>"; 
+                } 
+            function_alert("We send you your Username and your new Password by email");
+            } 
         exit();
     }
 }

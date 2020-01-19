@@ -11,11 +11,22 @@
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
-
+ .avatar{
+    width: 100px;
+	border-radius: 50%;
+	margin: 30px auto;
+  }
+   .imgcontainer {
+      
+	width:205px;
+	text-align: center;
+	margin: auto;
+  }
   
 .Sign-up-form {
 	width: 500px;
 	margin: 30px auto;
+	
 }
 .Sign-up-form form {        
 	margin-bottom: 15px;
@@ -116,6 +127,8 @@ hr {
   clear: both;
   display: table;
 }
+
+
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {

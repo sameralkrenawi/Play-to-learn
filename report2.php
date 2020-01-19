@@ -51,8 +51,8 @@ tr:nth-child(even) {background-color: #f2f2f2}
             $requete = "SELECT * FROM MyReport";
             $exec_requete = mysqli_query($db,$requete);
             $repons = mysqli_fetch_array($exec_requete);
-            while($repons = mysqli_fetch_array($exec_requete) and $temp=1){
-               echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["report"] . "</td><td>"
+            while($repons = mysqli_fetch_array($exec_requete)){
+             echo "<tr><td>" . $repons["username"]. "</td><td>" . $repons["report"] . "</td><td>"
             . $repons["note"]. "</td></tr>";
         }
             $conn->close();

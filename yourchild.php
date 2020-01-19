@@ -4,6 +4,7 @@
 <head>
 <title>Your Children</title>
 <style>
+
 table {
 border-collapse: collapse;
 width: 100%;
@@ -31,6 +32,17 @@ tr:nth-child(even) {background-color: #f2f2f2}
 </style>
 </head>
 <body>
+    <style type="text/css">
+      body {
+        
+      background-image:url(image/userparent.jpg);
+      background-color:0;
+       background-position-X:300px;
+        background-size:55em;
+       
+      }
+      </style>
+    
     <?php
                 if (empty($_SESSION['username']) or $_SESSION['base']!="Parent")
                 {
@@ -92,6 +104,8 @@ tr:nth-child(even) {background-color: #f2f2f2}
         }
             $conn->close();
             ?>
+            
 </table>
+
 </body>
 </html>

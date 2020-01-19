@@ -1,5 +1,4 @@
 
-
 <?php session_start(); ?>
 <!DOCTYPE html>
 
@@ -61,37 +60,17 @@
         margin-right: auto;">
         </center>
     </div>
-    <center>
-        Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
-    </center>
-    	<?php
-            session_start();
-            $_SESSION['username'];
-            $dbServername = "localhost";
-            $dbUsername = "u815710449_playtolearn";
-            $dbPassword = "Sce2019";
-            $dbName="u815710449_playtolearn";
-            $db = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName)
-                or die('could not connect to database');
-            $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username']));
-            $requete = "SELECT * FROM Admin";
-            $exec_requete = mysqli_query($db,$requete);
-            $repons = mysqli_fetch_array($exec_requete);
-            while($repons = mysqli_fetch_array($exec_requete)){
-                if ($_SESSION['username']!=$repons['username']){
-                echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
-                echo("<button style=\"margin-left: 540px; width: 190px;height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
-                exit(); 
-                }
-            }
-            if (empty($_SESSION['username']))
-            {
+    <?php if (empty($_SESSION['username']) or $_SESSION['base']!="Admin")
+                {
             echo '<center><font color="red" size="4"><b>You need to be connected </center></font><br />';
             echo("<button style=\"margin-left: 540px; width: 190px;
     height: 50px;\" onclick=\"location.href='Sign-in.html'\">Login</button>");
             exit();
             }
-            ?>  
+            ?>
+    <center>
+        Welcome <?php echo htmlentities(trim($_SESSION['username'])); ?> !<br />
+    </center>
    <div>
         <img onclick="window.location.href = 'disconnect.php';" src="image/disconnect.png" class="btn btn-primary" id="btn-y" style=" height: 60px;width:60px;padding: 0px ;
         margin:0px 0px 0px 950px" >
@@ -99,8 +78,13 @@
     <center>
         <buttonn onclick="window.location.href = 'review2.php';" class="btnAddChild">All Reviews</buttonn>
         <buttonn onclick="window.location.href = 'report2.php';" class="btnYourChild">All Report</buttonn>
-        <buttonn onclick="window.location.href = 'yourchild.php';" class="btnYourChild">All Review of exercises and lessons</buttonn>
+        <buttonn onclick="window.location.href = 'reviewex.php';" class="btnYourChild">All Review of exercises and lessons</buttonn>
         <buttonn onclick="window.location.href = 'allusers.php';" class="btnyouraccountParents">All Users</buttonn>
+         <buttonn onclick="window.location.href = 'Sign-up-Admin.php';" class="btnyouraccountParents">Add Admin</buttonn>
+         <buttonn onclick="window.location.href = 'newsletter1.php';" class="btnyouraccountParents">Send newsletter</buttonn>
+         <buttonn onclick="window.location.href = 'Notification-A.php';" class="btnyouraccountParents"> Notification</buttonn>
+         <buttonn onclick="window.location.href = 'Menu-Lesson.php';" class="btnyouraccountParents"> -Lesson- </buttonn>
+        <buttonn onclick="window.location.href = 'Menu_Exercice.php';" class="btnyouraccountParents"> - Exercice- </buttonn>
     </center>
 
     <script>
